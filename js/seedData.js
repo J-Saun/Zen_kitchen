@@ -1,0 +1,186 @@
+import Recipe from "./classes/Recipe.js";
+
+const seedData = [
+  new Recipe(
+    "Spaghetti Bolognese",
+    5.9,
+    "https://plus.unsplash.com/premium_photo-1664478291780-0c67f5fb15e6?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Spaghetti", "Minced Beef", "Tomato Sauce", "Onion", "Garlic"],
+    "Cook spaghetti. Brown beef. Saute onion and garlic. Mix together.",
+    10,
+    30,
+    4,
+    1,
+    ["Italian", "Main Course"]
+  ),
+  new Recipe(
+    "Chicken Curry",
+    7.3,
+    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1371&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Chicken", "Curry Powder", "Coconut Milk", "Onion", "Garlic"],
+    "Brown chicken. Saute onion and garlic. Add curry powder. Add coconut milk.",
+    15,
+    45,
+    4,
+    3,
+    ["Indian", "Spicy", "Main Course"]
+  ),
+  new Recipe(
+    "Vegetable Stir Fry",
+    7.3,
+    "https://plus.unsplash.com/premium_photo-1664478238082-3df93e48c491?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Broccoli", "Carrot", "Bell Pepper", "Soy Sauce", "Garlic"],
+    "Stir fry vegetables. Add soy sauce.",
+    10,
+    20,
+    2,
+    2,
+    ["Chinese", "Vegan", "Main Course"]
+  ),
+  new Recipe(
+    "Fish Tacos",
+    8.3,
+    "https://images.unsplash.com/photo-1512838243191-e81e8f66f1fd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Fish", "Tortillas", "Cabbage Slaw", "Avocado", "Lime"],
+    "Cook fish. Assemble tacos with slaw and avocado. Squeeze lime on top.",
+    6.8,
+    15,
+    2,
+    3,
+    ["Mexican", "Main Course"]
+  ),
+  new Recipe(
+    "Beef Stew",
+    3.9,
+    "https://images.unsplash.com/photo-1608500218861-01091cdc501e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Beef", "Potatoes", "Carrots", "Onion", "Beef Broth"],
+    "Brown beef. Add vegetables and broth. Simmer until tender.",
+    25,
+    120,
+    6,
+    3,
+    ["Comfort Food", "Main Course"]
+  ),
+  new Recipe(
+    "Chicken Alfredo",
+    7.1,
+    "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Chicken", "Fettuccine", "Alfredo Sauce", "Parmesan"],
+    "Cook chicken and fettuccine. Mix with Alfredo sauce. Top with Parmesan.",
+    10,
+    30,
+    4,
+    3,
+    ["Italian", "Main Course"]
+  ),
+  new Recipe(
+    "Vegetable Soup",
+    3.3,
+    "https://images.unsplash.com/photo-1612108438004-257c47560118?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Carrots", "Celery", "Onion", "Tomatoes", "Vegetable Broth"],
+    "Saute vegetables. Add broth. Simmer until tender.",
+    15,
+    60,
+    4,
+    2,
+    ["Vegan", "Soup"]
+  ),
+  new Recipe(
+    "BBQ Chicken Pizza",
+    8.3,
+    "https://plus.unsplash.com/premium_photo-1672498193372-2b91ef813252?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Pizza Dough", "BBQ Sauce", "Chicken", "Mozzarella", "Red Onion"],
+    "Spread BBQ sauce on dough. Top with chicken, cheese, and onion. Bake.",
+    13,
+    20,
+    4,
+    2,
+    ["American", "Main Course"]
+  ),
+  new Recipe(
+    "Pancakes",
+    10,
+    "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Flour", "Eggs", "Milk", "Baking Powder", "Sugar"],
+    "Mix ingredients. Pour batter onto hot griddle. Flip when bubbles form.",
+    5,
+    15,
+    4,
+    2,
+    ["American", "Breakfast"]
+  ),
+  new Recipe(
+    "Caesar Salad",
+    7.3,
+    "https://images.unsplash.com/photo-1637531708162-0174fc1889c0?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Romaine Lettuce", "Croutons", "Parmesan", "Caesar Dressing"],
+    "Toss lettuce with dressing. Top with croutons and Parmesan.",
+    5,
+    10,
+    2,
+    1,
+    ["American", "Salad"]
+  ),
+  new Recipe(
+    "Chocolate Chip Cookies",
+    9.2,
+    "https://images.unsplash.com/photo-1639678114429-a915fdb55000?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Flour", "Butter", "Sugar", "Eggs", "Chocolate Chips"],
+    "Mix ingredients. Drop spoonfuls onto baking sheet. Bake until golden brown.",
+    7,
+    15,
+    24,
+    2,
+    ["American", "Dessert"]
+  ),
+  new Recipe(
+    "Mushroom Risotto",
+    6.1,
+    "https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Arborio Rice", "Mushrooms", "Chicken Broth", "Parmesan", "White Wine"],
+    "Saute mushrooms. Add rice and broth gradually. Stir in cheese and wine.",
+    15,
+    60,
+    4,
+    5,
+    ["Italian", "Main Course"]
+  ),
+  new Recipe(
+    "Tomato Bruschetta",
+    7.3,
+    "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Tomatoes", "Basil", "Garlic", "Olive Oil", "Baguette"],
+    "Mix tomatoes, basil, and garlic. Drizzle with oil. Serve on toasted baguette slices.",
+    4,
+    15,
+    6,
+    2,
+    ["Italian", "Appetizer"]
+  ),
+  new Recipe(
+    "Lemon Bars",
+    7.3,
+    "https://images.unsplash.com/photo-1528252941458-c1d19f902318?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Flour", "Butter", "Sugar", "Eggs", "Lemon Juice"],
+    "Mix ingredients. Press into pan. Bake until set. Dust with powdered sugar.",
+    10,
+    45,
+    16,
+    3,
+    ["American", "Dessert"]
+  ),
+  new Recipe(
+    "Greek Salad",
+    3.3,
+    "https://plus.unsplash.com/premium_photo-1690561082029-0eb2ed65a09f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ["Romaine Lettuce", "Tomatoes", "Cucumbers", "Feta Cheese", "Olives"],
+    "Chop vegetables. Toss with dressing. Top with cheese and olives.",
+    5,
+    15,
+    2,
+    2,
+    ["Greek", "Salad"]
+  ),
+];
+
+export default seedData;
