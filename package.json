@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "Zen-Kitchen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dbTest": "node js/dbTest.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.4"
+  }
+}
